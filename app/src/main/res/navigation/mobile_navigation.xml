@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/destination_home">
+
+    <fragment
+        android:id="@+id/destination_home"
+        android:name="com.resocoder.navigationtut.HomeFragment"
+        android:label="Home" />
+    <fragment
+        android:id="@+id/destination_camera"
+        android:name="com.resocoder.navigationtut.CameraFragment"
+        android:label="Camera">
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/distination_photos" />
+    </fragment>
+    <fragment
+        android:id="@+id/distination_photos"
+        android:name="com.resocoder.navigationtut.PhotosFragment"
+        android:label="PhotosFragment">
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_home" />
+        <argument
+            android:name="numOfPhotos"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_settings"
+        android:name="com.resocoder.navigationtut.SettingsFragment"
+        android:label="Settings" />
+</navigation>
